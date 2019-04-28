@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SPRTMT2.HirdetoPage">
+    <ContentPage.Content>
+		<StackLayout>
+			<Grid x:Name="HirdetoAdatok" RowSpacing="1" ColumnSpacing="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="62" />
+					<RowDefinition Height="60" />
+					<RowDefinition Height="60" />
+					<RowDefinition Height="60" />
+					<RowDefinition Height="60" />
+					<RowDefinition Height="60" />
+					<RowDefinition Height="*" />
+
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+				<!--<controls:CircleImage x:Name="ProfilPic" Aspect="AspectFill" HeightRequest="40" WidthRequest="40" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />-->
+				<Image x:Name="ProfilPic" Grid.Column="0" Grid.Row="1" HeightRequest="40" WidthRequest="40" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+				<Label x:Name="SportName" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start" FontSize="50.0" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"  />
+				<Frame CornerRadius="15"  Padding="1" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" BackgroundColor="LightGray" HasShadow="False"  >
+					<Button Text="Csatlakozas"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" Clicked="Button_Clicked" VerticalOptions="FillAndExpand" />
+				</Frame>
+				<Label Text="Hely" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="LawnGreen" Grid.Row="2" Grid.Column="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  FontAttributes="Italic"/>
+
+				<Frame Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" BorderColor="Black">
+					<Label x:Name="PlaceLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Italic"  HorizontalOptions="CenterAndExpand">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+						</Label.GestureRecognizers>
+					</Label>
+				</Frame>
+
+				<Label Text="Idopont: "   VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="LawnGreen" Grid.Row="3" Grid.Column="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+				<Frame BackgroundColor="Transparent" BorderColor="Black" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" >
+					<Label x:Name="DateLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HorizontalOptions="CenterAndExpand"/>
+				</Frame>
+
+				<Label Text="Fő: "  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="LawnGreen" Grid.Row="4" Grid.Column="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+				<Frame BackgroundColor="Transparent" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" BorderColor="Black">
+					<Label x:Name="AvailablePlacesLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"    HorizontalOptions="CenterAndExpand"/>
+				</Frame>
+
+				<Image x:Name="MapsIcon" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+				<!--<Label Text="Ár: " VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="LawnGreen" Grid.Row="4" Grid.Column="3"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+				<Frame BackgroundColor="Transparent" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" BorderColor="Black">
+					<Label x:Name="CostsLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HorizontalOptions="CenterAndExpand"/>
+				</Frame>-->
+
+				<Image x:Name="ChatPic" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+			</Grid>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

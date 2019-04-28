@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SPRTMT2.Profil">
+    <ContentPage.Content>
+		<StackLayout>
+			<!--Profil picture-->
+			<Image x:Name="MyImage" HeightRequest="90" WidthRequest="90"/>
+			<Label Text="Adrian Kovacs"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"  FontAttributes="Bold" FontSize="Large"/>
+
+			<!--Description part-->
+			<Label Text="Description: "  FontSize="Medium" FontAttributes="Bold"/>
+			<Label Text="Szuletesi ev: 1998.06.16" />
+			<Label Text="Lakhely: Pomaz Ond utca 9" />
+			<Label Text="Nem: Ferfi" />
+
+			<!--Followed sports pictures list-->
+			<Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="25" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label Text="Followed Sports" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" TextColor="Green" FontSize="Medium" FontAttributes="Bold" Grid.ColumnSpan="3" />
+				<Image x:Name="BasketballImg" Grid.Row="1" Grid.Column="0" HeightRequest="50" WidthRequest="50"/>
+				<Image x:Name="AmcsiFociImg" Grid.Row="1" Grid.Column="1"  HeightRequest="50" WidthRequest="50"/>
+				<Image x:Name="FociImg" Grid.Row="1" Grid.Column="2"  HeightRequest="50" WidthRequest="50"/>
+				<Image x:Name="BaseballImg" Grid.Row="1" Grid.Column="3"  HeightRequest="50" WidthRequest="50"/>
+			</Grid>
+
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

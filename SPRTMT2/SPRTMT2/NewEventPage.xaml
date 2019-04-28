@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SPRTMT2.NewEventPage">
+    <ContentPage.Content>
+		<StackLayout>
+			<Label Text="Create your Event!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+			<Picker x:Name="SportPicker" Title="Sport">
+				<Picker.Items>
+					<x:String>Kosárlabda</x:String>
+					<x:String>Kézilabda</x:String>
+					<x:String>Foci</x:String>
+					<x:String>Fitness</x:String>
+					<x:String>Bowling</x:String>
+					<x:String>Tenisz</x:String>
+				</Picker.Items>
+			</Picker>
+			<Picker x:Name="PeoplePicker" Title="Szabad helyek:">
+				<Picker.Items>
+					<x:String>1</x:String>
+					<x:String>2</x:String>
+					<x:String>3</x:String>
+					<x:String>4</x:String>
+					<x:String>5</x:String>
+					<x:String>6</x:String>
+					<x:String>7</x:String>
+					<x:String>8</x:String>
+					<x:String>9</x:String>
+					<x:String>10</x:String>
+				</Picker.Items>
+			</Picker>
+			<DatePicker.Format>d/M/yyyy</DatePicker.Format>
+			<DatePicker x:Name="Date"  MinimumDate="01/01/2019"
+            MaximumDate="12/31/2019" Format="D"/>
+			<TimePicker x:Name="TimePicketr" Time="12:00:00" />
+			<Picker x:Name="PlacePicker" Title="Hol">
+				<Picker.Items>
+					<x:String>Budapest</x:String>
+					<x:String>Pécs</x:String>
+					<x:String>Szeged</x:String>
+					<x:String>Pomáz</x:String>
+					<x:String>Szentendre</x:String>
+					<x:String>Óbuda</x:String>
+				</Picker.Items>
+			</Picker>
+			<Label Text="Jelöld meg a barátaid: " />
+			<Entry Placeholder="@Bendeguz29"/>
+
+			<Button Text="Hirdetes feladása"  Clicked="Button_Clicked" ></Button>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

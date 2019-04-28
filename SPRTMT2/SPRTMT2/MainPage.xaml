@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SPRTMT2"
+             x:Class="SPRTMT2.MainPage">
+
+	<StackLayout BackgroundColor="White" >
+		<!-- Place new controls here -->
+		<Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="10" />
+				<RowDefinition Height="50" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Image x:Name="ProfilPic" Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2" HeightRequest="50" WidthRequest="50">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+				</Image.GestureRecognizers>
+			</Image>
+			<Label x:Name="Search" Grid.Row="0" Grid.Column="1" />
+			<Entry x:Name="SearchBarEntry" Placeholder="kereses" Grid.Row="0" Grid.Column="2"  Grid.ColumnSpan="3"/>
+			<Label Text="Uj hirdetes" FontAttributes="Bold" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Button Text="+" Clicked="Button_Clicked" Grid.Row="1" Grid.Column="3"/>
+
+			<Label Text="Sport Esemenyek" FontSize="Large" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+		</Grid>
+
+		<!--Hirdetes lista-->
+		<ListView HasUnevenRows="True" x:Name="EventList" ItemSelected="EventList_ItemSelected" >
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<!--Itt van megadva a lista szine(BackgroundColor): ha kivalasztasz egy szint akkor # utal tudod beirni az erteket-->
+						<Frame Padding="2" Margin="4,5,4,5" HeightRequest="100"  HasShadow="False" BackgroundColor="LawnGreen" CornerRadius="15">
+
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="30" />
+									<RowDefinition Height="23" />
+									<RowDefinition Height="23" />
+									<RowDefinition Height="*" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+
+								<Image Source="{Binding Picture}"  HeightRequest="50" WidthRequest="50" Grid.Row="0" Grid.RowSpan="4"/>
+								<Label Text="{Binding Sport}" VerticalOptions="FillAndExpand" FontSize="Large" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0"/>
+								<Label Text="Fő: " FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" Grid.Column="1" Grid.Row="1"/>
+								<Label Text="{Binding PlacesAvailable}" HorizontalOptions="Fill"  VerticalOptions="Center" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+								<Label Text="Hely:" FontSize="Medium" Grid.Row="2" Grid.Column="1" FontAttributes="Bold" />
+								<Label Text="{Binding Place}" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" FontAttributes="Italic" HorizontalOptions="Fill"  VerticalOptions="Center" />
+							</Grid>
+						</Frame>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+
+</ContentPage>
